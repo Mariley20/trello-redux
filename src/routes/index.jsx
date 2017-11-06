@@ -1,7 +1,7 @@
-import App from 'containers/App/App.jsx';
+import App from 'App.js';
 
 var indexRoutes = [
-    { path: "/", name: "Home", component: App }
+    { path: "/", name: "sign_in", component: Sign_In }
 ];
 
 export default indexRoutes;
