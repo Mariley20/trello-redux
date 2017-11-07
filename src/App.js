@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from "redux-zero/react";
-import { addComment, removeComment, reportAbusive } from "./actions";
+import { } from "./actions";
 import './App.css';
 const App = ({ commentary, selectedComment }) => {
 return (
