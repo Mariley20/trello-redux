@@ -9,15 +9,16 @@ import { } from "./actions";
 import './App.css';
 import {SignIn} from './SignIn';
 import {SignUp} from './SignUp';
-const App = ({ commentary, selectedComment }) => {
+import {MyBoards} from './MyBoards';
+const App = ({ myBoard, selected }) => {
 return (
     <div className="container">
         <Header />
         <HashRouter>
             <Switch>
-                    <Route path="/" component={SignUp} />
-                    <Route path="/sign_up" component={SignUp} />
-                    <Route path="/sign_in" component={SignIn} />
+                    <Route path="/" component={SignUp} reder={() => <SingUp myBoard={myBoard} selected={selected} />}/>
+                    <Route path="/sign_up" component={SignUp} reder={() => <SingUp myBoard={myBoard} selected={selected} />}/>
+                    <Route path="/sign_in" component={SignIn} reder={() => <SingIn myBoard={myBoard} selected={selected} />}/>
             </Switch>
         </HashRouter>
     </div>
@@ -30,6 +31,6 @@ const Header = () => {
         </div>
     )
 }
-const mapToProps = ({ commentary, selected }) => ({ commentary, selected });
+const mapToProps = ({ myBoard, selected }) => ({ myBoard, selected });
 
 export default connect(mapToProps)(App);
