@@ -30,6 +30,6 @@ const Header = () => {
         </div>
     )
 }
-const mapToProps = ({ commentary, selectedComment }) => ({ commentary, selectedComment });
+const mapToProps = ({ commentary, selected }) => ({ commentary, selected });
 
 export default connect(mapToProps)(App);

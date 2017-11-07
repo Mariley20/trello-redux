@@ -1,9 +1,15 @@
 import createStore from "redux-zero";
 
-let commentary = [];
+let myBoard = [{
+    title: "Portafolio",
+    lista: [{
+        titleList: "create react app",
+        commentary: "una lista genial"
+    }]
+}];
 const initialState = {
-    commentary: commentary,
-    selectedComment: 0
+    myBoard: myBoard,
+    selected: 0
 };
 
 const store = createStore(initialState);
