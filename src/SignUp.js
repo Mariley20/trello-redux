@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Button, Form, FormControl, FormGroup, Col, Checkbox } from 'react-bootstrap';
 
-export const SignUp =() => {
+export const SignUp =({myBoard, selected}) => {
     return(
         <div>
   <Form horizontal>

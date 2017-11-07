@@ -16,9 +16,9 @@ return (
         <Header />
         <HashRouter>
             <Switch>
-                    <Route path="/" component={SignUp} reder={() => <SingUp myBoard={myBoard} selected={selected} />}/>
-                    <Route path="/sign_up" component={SignUp} reder={() => <SingUp myBoard={myBoard} selected={selected} />}/>
-                    <Route path="/sign_in" component={SignIn} reder={() => <SingIn myBoard={myBoard} selected={selected} />}/>
+                    <Route path="/"  render={() => <SingUp myBoard={myBoard} selected={selected} />}/>
+                    <Route path="/sign_up" render={() => <SingUp myBoard={myBoard} selected={selected} />}/>
+                    <Route path="/sign_in"  render={() => <SingIn myBoard={myBoard} selected={selected} />}/>
             </Switch>
         </HashRouter>
     </div>
