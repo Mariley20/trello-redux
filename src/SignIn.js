@@ -4,7 +4,7 @@ import { Button, Form, FormControl, FormGroup, Col, Checkbox } from 'react-boots
 export const SignIn =() => {
     return(
         <div>
-            <Form horizontal>
+  <Form horizontal>
     <FormGroup controlId="formHorizontalEmail">
       <Col sm={10}>
         <FormControl type="email" placeholder="Email" />
