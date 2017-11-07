@@ -8,8 +8,8 @@ import {
 } from 'react-router-dom';
 import store from "./store";
 import App from './App';
-import SignIn from '../SignIn.js';
-import SignIn from '../SignUp.js';
+import {SignIn} from './SignIn.js';
+import {SignUp} from './SignUp.js';
 import registerServiceWorker from './registerServiceWorker';
 
 const Index = () => (
@@ -17,9 +17,6 @@ const Index = () => (
         <HashRouter>
             <Switch>
                     <Route exact path="/" component={App} />
-                    <Route path="/" component={SignUp} />
-                    <Route path="/sign_up" component={SignUp} />
-                    <Route path="/sign_in" component={SignIn} />
             </Switch>
         </HashRouter>
     </Provider>
