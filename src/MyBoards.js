@@ -3,7 +3,7 @@ import {
     NavLink
 } from 'react-router-dom';
 // import { Button } from 'react-bootstrap';
-import {selectBoard, addList} from './actions';
+import {selectBoard, addList, evaluateAddList} from './actions';
 
 const ListBoard = ({myBoard, selected}) => {
     let list = myBoard.map((item, index) => {
@@ -31,7 +31,7 @@ const AddListHMTL = ({selected}) => {
           <textarea className="form-control inputList" ref={(e) => this.List = e} ></textarea> 
         </div>
         <button type="submit" className="btn btn-default">Add</button>
-        <button type="button" onClick={() => evaluateAddCard(selected)} >Cancel</button>
+        <button type="button" onClick={() => evaluateAddList(selected)} >Cancel</button>
       </form> 
         </div>
     )
@@ -40,6 +40,7 @@ export const MyBoards = ({myBoard, selected}) => {
     return (
         <div>
             <ListBoard myBoard={myBoard} selected={selected} />
+            <AddListHMTL selected={selected} />
         </div>
     )
 }

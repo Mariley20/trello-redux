@@ -33,6 +33,8 @@ export const addCard = (card, selected, index) =>{
     }
 }
 export const addList = ({index}) => {
-    console.log(selected);
+    console.log("slected1",index);
 }
-
+export const evaluateAddList = ({selected}) => {
+    console.log("selected2", selected);
+}
