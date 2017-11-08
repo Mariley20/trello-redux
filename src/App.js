@@ -11,7 +11,7 @@ import {SignIn} from './SignIn';
 import {SignUp} from './SignUp';
 import {MyBoards} from './MyBoards';
 import {Details} from './BoardDetail';
-const App = ({ myBoard, selected }) => {
+const App = ({myBoard, selected, addCard}) => {
 return (
     <div className="container">
         <Header />
@@ -25,7 +25,7 @@ return (
                     <Route path="/sign_up" render={() => <SignUp myBoard={myBoard} selected={selected} />}/>
                     <Route path="/sign_in"  render={() => <SignIn myBoard={myBoard} selected={selected} />}/>
                     <Route path="/myboard"  render={() => <MyBoards myBoard={myBoard} selected={selected} />}/>
-                    <Route path="/details"  render={() => <Details myBoard={myBoard} selected={selected} />}/>
+                    <Route path="/details"  render={() => <Details myBoard={myBoard} selected={selected} addCard={addCard} />}/>
             </Switch>
         </BrowserRouter>
     </div>
@@ -38,6 +38,6 @@ const Header = () => {
         </div>
     )
 }
-const mapToProps = ({ myBoard, selected }) => ({ myBoard, selected });
+const mapToProps = ({myBoard, selected, addCard}) => ({myBoard, selected, addCard});
 
 export default connect(mapToProps)(App);

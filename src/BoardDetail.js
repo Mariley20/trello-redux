@@ -1,19 +1,38 @@
 import React, {Component} from 'react';
 import {NavLink} from 'react-router-dom';
-// import {
-//     Button,
-//     Form,
-//     FormControl,
-//     FormGroup,
-//     Col,
-//     Checkbox
-// } from 'react-bootstrap';
+import {addCards} from './actions';
 
-const ListHomework = ({myBoard, selected}) => {
-    let list = myBoard[selected].list.map((item, index) => {
+const ListCards = ({myCard, addCard}) => {
+    let list = myCard.map((item, index) => {
+            return (
+                <li className="cards" key={index}>
+                    {item.cardTitle}
+                </li>
+            )
+        });
+        return (
+            <div><ul>{list}</ul></div>
+        )
+}
+const AddCardsHTML = ({selected, index}) =>{
+    return(
+        <div>
+        <textarea></textarea><br/>
+        <button>Add</button> <button onClick={() => addCards(selected, index)} >Cancel</button>
+        </div>
+    )
+}
+const ListHomework = ({myList, selected, addCard}) => {
+    let list = myList.list.map((item, index) => {
         return (
             <li className="boards" key={index}>
-                <NavLink  to={"/detailsy"}>{item.titleList}</NavLink>
+                <h3>{item.titleList}</h3>
+                <ListCards myCard={item.cards} addCard={addCard}/>
+                {!item.newCard?
+                    <a onClick={() => addCards(selected, index)} >add a new Card +{addCard}</a>
+                    :
+                    <AddCardsHTML selected={selected} index={index} />
+                }            
             </li>
         )
     });
@@ -21,11 +40,12 @@ const ListHomework = ({myBoard, selected}) => {
         <ul>{list}</ul>
     )
 }
-export const Details = ({myBoard, selected}) => {
+
+export const Details = ({myBoard, selected, addCard}) => {
     return (
         <div>
             Hola Detalles {selected}
-            <ListHomework myBoard={myBoard} selected={selected} />
+            <ListHomework myList={myBoard[selected]} selected={selected} addCard={addCard} />
         </div>
     )
 }

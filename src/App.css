@@ -11,6 +11,9 @@ body {
 .logo {
     margin: 0 auto;
 }
+li {
+    list-style: none;
+}
 .boards {
     display: inline-block;
     background: rgba(222, 225, 227, 0.9);
@@ -22,5 +25,11 @@ body {
     min-height: 5em;
     animation-duration: .3s;
     animation-name: fadeIn;
-    text-decoration: none;
+    width: 260px;
+}
+.cards{
+    background: #fff;
+    padding: 0.5em;
+    border-radius: 3px;
+    border-bottom: 1px solid #bdc3c7; 
 }
