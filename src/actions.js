@@ -31,7 +31,8 @@ export const addCard = (card, selected, index) =>{
         console.log("clonelist", cloneList);
         evaluateAddCard(selected, index);
     }
-    
-
+}
+export const addList = ({index}) => {
+    console.log(selected);
 }
 
