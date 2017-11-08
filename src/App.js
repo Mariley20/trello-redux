@@ -3,8 +3,6 @@ import { connect } from "redux-zero/react";
 import {
     BrowserRouter,
     NavLink,
-    Redirect,
-    HashRouter,
     Route,
     Switch} from 'react-router-dom';
 import { } from "./actions";

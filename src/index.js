@@ -9,9 +9,9 @@ import {
 import store from "./store";
 import App from './App';
 import  './App.css';
-import {SignIn} from './SignIn';
-import {SignUp} from './SignUp';
-import {MyBoards} from './MyBoards';
+// import {SignIn} from './SignIn';
+// import {SignUp} from './SignUp';
+// import {MyBoards} from './MyBoards';
 import registerServiceWorker from './registerServiceWorker';
 
 const Index = () => (

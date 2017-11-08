@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {
     NavLink
 } from 'react-router-dom';
-import { Button, Form, FormControl, FormGroup, Col, Checkbox } from 'react-bootstrap';
+// import { Button } from 'react-bootstrap';
 import {selectBoard} from './actions';
 export const MyBoards = ({myBoard, selected}) => {
     return (
