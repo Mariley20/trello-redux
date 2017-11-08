@@ -26,7 +26,7 @@ const AddListHMTL = ({selected}) => {
   }
     return(
         <div>
-            <form onSubmit = {onSubmit}>
+            <form onSubmit={onSubmit}className="boards">
         <div className="form-group">
           <textarea className="form-control inputList" ref={(e) => this.List = e} ></textarea> 
         </div>
@@ -40,7 +40,12 @@ export const MyBoards = ({myBoard, selected}) => {
     return (
         <div>
             <ListBoard myBoard={myBoard} selected={selected} />
-            <AddListHMTL selected={selected} />
+            {!myBoard[selected].newList?
+                <button onClick={() => evaluateAddList(selected)}>add List{selected}</button>
+            :
+                <AddListHMTL selected={selected} />
+            }
+            
         </div>
     )
 }

@@ -1,6 +1,7 @@
 import createStore from "redux-zero";
 
 let myBoard = [{
+    newList : false,
     title: "Portafolio",
     list: [
             {
@@ -33,6 +34,7 @@ let myBoard = [{
         ]
 },
 {
+    newList: false,
     title: "Portafolio2",
     list: [
         {

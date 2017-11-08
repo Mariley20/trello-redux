@@ -32,9 +32,17 @@ export const addCard = (card, selected, index) =>{
         evaluateAddCard(selected, index);
     }
 }
-export const addList = ({index}) => {
+export const addList = (index) => {
     console.log("slected1",index);
 }
-export const evaluateAddList = ({selected}) => {
+export const evaluateAddList = (selected) => {
     console.log("selected2", selected);
+    let newVal = (store.getState().myBoard[selected].newList)? false : true;
+    const cloneList = [...store.getState().myBoard];
+    cloneList[selected].newList = newVal;
+
+    store.setState({
+        myBoard: cloneList
+    });
+    console.log("addcards", cloneList[selected])
 }
