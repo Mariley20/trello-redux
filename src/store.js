@@ -2,17 +2,35 @@ import createStore from "redux-zero";
 
 let myBoard = [{
     title: "Portafolio",
-    lista: [{
+    list: [{
         titleList: "create react app",
-        commentary: "una lista genial"
+        cards:[{
+            cardTitle:"Card 1",
+            commentary: "una lista genial"
+        }]
+    },
+    {
+        titleList: "create react app 2",
+        cards : [{
+            cardTitle:"Cards 23",
+            commentary: "una lista genial"}]
+    },
+    {
+        titleList: "create react app 3",
+        cards : [{
+            cardTitle:"Cards 234",
+            commentary: "una lista genial"}]
     }]
 },
 {
     title: "Portafolio2",
-    lista: [
+    list: [
         {
             titleList: "create react app",
-            commentary: "una lista genial"
+            cards:[{
+                cardTitle:"Cards 2312",
+                commentary: "una lista genial"
+        }]
         }
     ]
 }
