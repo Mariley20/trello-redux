@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import {
+  NavLink
+} from 'react-router-dom';
 import { Button, Form, FormControl, FormGroup, Col, Checkbox } from 'react-bootstrap';
 
 export const SignIn =({myBoard, selected}) => {
@@ -26,7 +29,7 @@ export const SignIn =({myBoard, selected}) => {
     <FormGroup>
       <Col smOffset={2} sm={10}>
         <Button type="submit">
-          Sign in
+          <NavLink to={"/myboard"} >Sign in</NavLink>
         </Button>
       </Col>
     </FormGroup>

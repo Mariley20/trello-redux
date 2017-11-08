@@ -11,3 +11,16 @@ body {
 .logo {
     margin: 0 auto;
 }
+.boards {
+    display: inline-block;
+    background: rgba(222, 225, 227, 0.9);
+    border-radius: 3px;
+    margin: 0 0.5em 1em 0.5em;
+    line-height: 1.75em;
+    overflow: hidden;
+    padding: 0.85em;
+    min-height: 5em;
+    animation-duration: .3s;
+    animation-name: fadeIn;
+    text-decoration: none;
+}
