@@ -6,7 +6,7 @@ export const selectBoard = (index) => {
         selected: index
     })
 }
-export const addCards = (selected, index) => {
+export const evaluateAddCard = (selected, index) => {
     let newVal = (store.getState().myBoard[selected].list[index].newCard)? false : true;
     const cloneList = [...store.getState().myBoard];
     cloneList[selected].list[index].newCard = newVal;
@@ -15,5 +15,23 @@ export const addCards = (selected, index) => {
         myBoard: cloneList
     });
     console.log("addcards", cloneList[selected].list[index])
+}
+export const addCard = (card, selected, index) =>{
+    console.log("cARD", card);
+    if(card != "") {
+        const cloneList = [...store.getState().myBoard];
+        let newCard = {
+            cardTitle : card,
+            commentary : []
+        }
+        cloneList[selected].list[index].cards.push(newCard);
+        store.setState({
+            myBoard: cloneList
+        });
+        console.log("clonelist", cloneList);
+        evaluateAddCard(selected, index);
+    }
+    
+
 }
 

@@ -25,7 +25,7 @@ return (
                     <Route path="/sign_up" render={() => <SignUp myBoard={myBoard} selected={selected} />}/>
                     <Route path="/sign_in"  render={() => <SignIn myBoard={myBoard} selected={selected} />}/>
                     <Route path="/myboard"  render={() => <MyBoards myBoard={myBoard} selected={selected} />}/>
-                    <Route path="/details"  render={() => <Details myBoard={myBoard} selected={selected} addCard={addCard} />}/>
+                    <Route path="/details"  render={() => <Details myBoard={myBoard} selected={selected} />}/>
             </Switch>
         </BrowserRouter>
     </div>
@@ -38,6 +38,6 @@ const Header = () => {
         </div>
     )
 }
-const mapToProps = ({myBoard, selected, addCard}) => ({myBoard, selected, addCard});
+const mapToProps = ({myBoard, selected}) => ({myBoard, selected});
 
 export default connect(mapToProps)(App);

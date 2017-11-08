@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import {NavLink} from 'react-router-dom';
-import {addCards} from './actions';
+import {evaluateAddCard, addCard} from './actions';
 
-const ListCards = ({myCard, addCard}) => {
+const ListCards = ({myCard}) => {
     let list = myCard.map((item, index) => {
             return (
                 <li className="cards" key={index}>
@@ -15,21 +15,32 @@ const ListCards = ({myCard, addCard}) => {
         )
 }
 const AddCardsHTML = ({selected, index}) =>{
+    const onSubmit = (e) => {
+		e.preventDefault();
+		console.log ( 'this..', this);//con truco, es el connect el this.
+    addCard(this.card.value, selected, index );
+     this.card.value = "";
+  }
     return(
         <div>
-        <textarea></textarea><br/>
-        <button>Add</button> <button onClick={() => addCards(selected, index)} >Cancel</button>
+            <form onSubmit = {onSubmit}>
+        <div className="form-group">
+          <textarea className="form-control inputcard" ref={(e) => this.card = e} ></textarea> 
+        </div>
+        <button type="submit" className="btn btn-default">Add</button>
+        <button type="button" onClick={() => evaluateAddCard(selected, index)} >Cancel</button>
+      </form> 
         </div>
     )
 }
-const ListHomework = ({myList, selected, addCard}) => {
+const ListHomework = ({myList, selected}) => {
     let list = myList.list.map((item, index) => {
         return (
             <li className="boards" key={index}>
                 <h3>{item.titleList}</h3>
-                <ListCards myCard={item.cards} addCard={addCard}/>
+                <ListCards myCard={item.cards}/>
                 {!item.newCard?
-                    <a onClick={() => addCards(selected, index)} >add a new Card +{addCard}</a>
+                    <a onClick={() => evaluateAddCard(selected, index)} >add a new Card </a>
                     :
                     <AddCardsHTML selected={selected} index={index} />
                 }            
@@ -41,11 +52,11 @@ const ListHomework = ({myList, selected, addCard}) => {
     )
 }
 
-export const Details = ({myBoard, selected, addCard}) => {
+export const Details = ({myBoard, selected}) => {
     return (
         <div>
             Hola Detalles {selected}
-            <ListHomework myList={myBoard[selected]} selected={selected} addCard={addCard} />
+            <ListHomework myList={myBoard[selected]} selected={selected} />
         </div>
     )
 }
