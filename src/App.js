@@ -4,6 +4,7 @@ import {
     BrowserRouter,
     NavLink,
     Route,
+    Redirect,
     Switch} from 'react-router-dom';
 import './App.css';
 import {SignIn} from './SignIn';
