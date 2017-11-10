@@ -5,7 +5,6 @@ import {
     NavLink,
     Route,
     Switch} from 'react-router-dom';
-import { } from "./actions";
 import './App.css';
 import {SignIn} from './SignIn';
 import {SignUp} from './SignUp';
@@ -26,6 +25,7 @@ return (
                     <Route path="/sign_in"  render={() => <SignIn myBoard={myBoard} selected={selected} />}/>
                     <Route path="/myboard"  render={() => <MyBoards myBoard={myBoard} selected={selected} />}/>
                     <Route path="/details"  render={() => <Details myBoard={myBoard} selected={selected} />}/>
+                    <Route path='/trello-redux' render={() => <Redirect to="/sign_in"/>}/>
             </Switch>
         </BrowserRouter>
     </div>
