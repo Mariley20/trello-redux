@@ -27,8 +27,8 @@ const AddCardsHTML = ({selected, index}) =>{
         <div className="form-group">
           <textarea className="form-control inputcard" ref={(e) => this.card = e} ></textarea> 
         </div>
-        <button type="submit" className="btn btn-default">Add</button>
-        <button type="button" onClick={() => evaluateAddCard(selected, index)} >Cancel</button>
+        <button type="submit" className="btn btn-primary">Add</button>
+        <button type="button" onClick={() => evaluateAddCard(selected, index)} className="btn btn-default" >Cancel</button>
       </form> 
         </div>
     )
@@ -64,8 +64,8 @@ const AddListHMTL = ({newBoard, selected}) => {
         <div className="form-group">
           <textarea className="form-control inputList" ref={(e) => this.List = e} ></textarea> 
         </div>
-        <button type="submit" className="btn btn-default">Add</button>
-        <button type="button" onClick={() => evaluateAddList(selected)}>Cancel</button>
+        <button type="submit" className="btn btn-primary">Add</button>
+        <button type="button" onClick={() => evaluateAddList(selected)} className="btn btn-default" >Cancel</button>
       </form> 
         </div>
     )
@@ -76,9 +76,9 @@ export const Details = ({myBoard, newList, selected}) => {
             Hola Detalles {selected}
             <ListHomework myList={myBoard[selected]} selected={selected} />
             {!myBoard[selected].newList?
-                <button onClick={() => evaluateAddList(selected)}>add List{selected}</button>
+                <button onClick={() => evaluateAddList(selected)} className="btn btn-secundary" >add List{selected}</button>
             :
-                <AddListHMTL newBoard={myBoard[selected].newList} selected={selected} />
+                <AddListHMTL newBoard={myBoard[selected].newList} className="btn btn-secundary" selected={selected} />
             }
         </div>
     )

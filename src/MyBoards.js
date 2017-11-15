@@ -30,8 +30,8 @@ const AddBoardHMTL = ({newBoard, selected}) => {
         <div className="form-group">
           <textarea className="form-control inputList" ref={(e) => this.List = e} ></textarea> 
         </div>
-        <button type="submit" className="btn btn-default">Add</button>
-        <button type="button" onClick={() => evaluateAddBoard(selected)}>Cancel</button>
+        <button type="submit" className="btn btn-primary">Add</button>
+        <button type="button" className="btn btn-default" onClick={() => evaluateAddBoard(selected)}>Cancel</button>
       </form> 
         </div>
     )
@@ -39,9 +39,9 @@ const AddBoardHMTL = ({newBoard, selected}) => {
 export const MyBoards = ({myBoard, newBoard, selected}) => {
     return (
         <div>
-            <ListBoard myBoard={myBoard} selected={selected} />
+            <ListBoard myBoard={myBoard} className="btn btn-secundary" selected={selected} />
             {!newBoard?
-                <button onClick={() => evaluateAddBoard(selected)}>add List{selected}</button>
+                <button onClick={() => evaluateAddBoard(selected)} className="btn btn-secundary">add List{selected}</button>
             :
                 <AddBoardHMTL newBoard={newBoard} selected={selected} />
             }
