@@ -40,12 +40,13 @@ export const MyBoards = ({myBoard, newBoard, selected}) => {
     return (
         <div>
             <ListBoard myBoard={myBoard} className="btn btn-secundary" selected={selected} />
+            <div className="board">
             {!newBoard?
-                <button onClick={() => evaluateAddBoard(selected)} className="btn btn-secundary">add List{selected}</button>
+                <button onClick={() => evaluateAddBoard(selected)} className="btn btn-add">add Board</button>
             :
                 <AddBoardHMTL newBoard={newBoard} selected={selected} />
             }
-            
+            </div>
         </div>
     )
 }

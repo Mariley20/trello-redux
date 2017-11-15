@@ -47,9 +47,9 @@ const ListHomework = ({myList, selected}) => {
     });
     return (
         <div className="list-flex">{list}
-        <div className="boards">
+        <div >
             {!myList.newList?
-                <input type="text" onClick={() => evaluateAddList(selected)} className="btn btn-add"  value="add List" />
+                <button type="text" onClick={() => evaluateAddList(selected)} className="btn btn-add">add List</button>
             :
                 <AddListHMTL newBoard={myList.newList} className="btn btn-secundary" selected={selected} />
             }
@@ -65,7 +65,7 @@ const AddListHMTL = ({newBoard, selected}) => {
      this.List.value = "";
   }
     return(
-            <form onSubmit={onSubmit}>
+            <form onSubmit={onSubmit} className="boards">
         <div className="form-group">
           <textarea className="form-control inputList" ref={(e) => this.List = e} ></textarea> 
         </div>
