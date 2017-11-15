@@ -8,7 +8,7 @@ import {
 } from 'react-router-dom';
 import store from "./store";
 import App from './App';
-import  './App.css';
+import  './css/app.css';
 // import {SignIn} from './SignIn';
 // import {SignUp} from './SignUp';
 // import {MyBoards} from './MyBoards';

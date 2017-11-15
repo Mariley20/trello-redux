@@ -6,7 +6,7 @@ import {
     Route,
     Redirect,
     Switch} from 'react-router-dom';
-import './App.css';
+import './css/app.css';
 import {SignIn} from './SignIn';
 import {SignUp} from './SignUp';
 import {MyBoards} from './MyBoards';
