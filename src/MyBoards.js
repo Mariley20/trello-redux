@@ -14,7 +14,7 @@ const ListBoard = ({myBoard, newBoard, selected}) => {
         )
     });
     return (
-        <ul>{list}</ul>
+        <ul className="list-flex">{list}</ul>
     )
 }
 const AddBoardHMTL = ({newBoard, selected}) => {
