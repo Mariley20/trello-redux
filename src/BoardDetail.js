@@ -75,10 +75,10 @@ export const Details = ({myBoard, newList, selected}) => {
         <div>
             Hola Detalles {selected}
             <ListHomework myList={myBoard[selected]} selected={selected} />
-            {!newList?
+            {!myBoard[selected].newList?
                 <button onClick={() => evaluateAddList(selected)}>add List{selected}</button>
             :
-                <AddListHMTL newBoard={newList} selected={selected} />
+                <AddListHMTL newBoard={myBoard[selected].newList} selected={selected} />
             }
         </div>
     )

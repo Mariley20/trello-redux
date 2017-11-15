@@ -66,9 +66,11 @@ export const addList = (title, selected) => {
 }
 export const evaluateAddList = (selected) => {
     console.log('selected', selected)
-    let newVal = (store.getState().newList) ? false : true;
+    let newVal = (store.getState().myBoard[selected].newList) ? false : true;
+    const cloneList = [...store.getState().myBoard];
+    cloneList[selected].newList = newVal;
 
     store.setState({
-        newList: newVal
+        myBoard: cloneList
     });
 }
