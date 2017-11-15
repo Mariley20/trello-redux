@@ -11,7 +11,7 @@ const ListCards = ({myCard}) => {
             )
         });
         return (
-            <div><ul>{list}</ul></div>
+            <div><ul className="list-flex">{list}</ul></div>
         )
 }
 const AddCardsHTML = ({selected, index}) =>{
@@ -70,7 +70,7 @@ const AddListHMTL = ({newBoard, selected}) => {
         </div>
     )
 }
-export const Details = ({myBoard, newList, selected}) => {
+export const Details = ({myBoard, selected}) => {
     return (
         <div>
             Hola Detalles {selected}

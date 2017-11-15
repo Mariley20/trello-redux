@@ -59,7 +59,6 @@ let myBoard = [{
 const initialState = {
     myBoard: myBoard,
     newBoard: false,
-    newList: false,
     selected: 0,
 };
 

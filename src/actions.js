@@ -63,17 +63,20 @@ export const evaluateAddBoard = (selected) => {
 }
 export const addList = (title, selected) => {
     console.log('title', title, 'selected', selected);
-    let newVal = {
-        titleList: title,
-        newCard: false,
-        cards: []
-    }
-    const cloneList = [...store.getState().myBoard];
-    cloneList[selected].list.push(newVal);
+    if (title != "") {
+        let newVal = {
+            titleList: title,
+            newCard: false,
+            cards: []
+        }
+        const cloneList = [...store.getState().myBoard];
+        cloneList[selected].list.push(newVal);
 
-    store.setState({
-        myBoard: cloneList
-    });
+        store.setState({
+            myBoard: cloneList
+        });
+    }
+    evaluateAddList(selected);
 }
 export const evaluateAddList = (selected) => {
     console.log('selected', selected)
