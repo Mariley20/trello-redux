@@ -3,9 +3,9 @@ import {
     NavLink
 } from 'react-router-dom';
 // import { Button } from 'react-bootstrap';
-import {selectBoard, addList, evaluateAddList} from './actions';
+import {selectBoard, addBoard, evaluateAddBoard} from './actions';
 
-const ListBoard = ({myBoard, selected}) => {
+const ListBoard = ({myBoard, newBoard, selected}) => {
     let list = myBoard.map((item, index) => {
         return (
             <li className="boards" key={index}>
@@ -17,11 +17,11 @@ const ListBoard = ({myBoard, selected}) => {
         <ul>{list}</ul>
     )
 }
-const AddListHMTL = ({selected}) => {
+const AddBoardHMTL = ({newBoard, selected}) => {
     const onSubmit = (e) => {
 		e.preventDefault();
 		console.log ( 'this..', this);//con truco, es el connect el this.
-    addList(this.List.value, selected );
+    addBoard(this.List.value, selected);
      this.List.value = "";
   }
     return(
@@ -31,19 +31,19 @@ const AddListHMTL = ({selected}) => {
           <textarea className="form-control inputList" ref={(e) => this.List = e} ></textarea> 
         </div>
         <button type="submit" className="btn btn-default">Add</button>
-        <button type="button" onClick={() => evaluateAddList(selected)} >Cancel</button>
+        <button type="button" onClick={() => evaluateAddBoard(selected)}>Cancel</button>
       </form> 
         </div>
     )
 }
-export const MyBoards = ({myBoard, selected}) => {
+export const MyBoards = ({myBoard, newBoard, selected}) => {
     return (
         <div>
             <ListBoard myBoard={myBoard} selected={selected} />
-            {!myBoard[selected].newList?
-                <button onClick={() => evaluateAddList(selected)}>add List{selected}</button>
+            {!newBoard?
+                <button onClick={() => evaluateAddBoard(selected)}>add List{selected}</button>
             :
-                <AddListHMTL selected={selected} />
+                <AddBoardHMTL newBoard={newBoard} selected={selected} />
             }
             
         </div>

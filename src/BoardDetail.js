@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {NavLink} from 'react-router-dom';
-import {evaluateAddCard, addCard} from './actions';
+import {evaluateAddList, addList, evaluateAddCard, addCard} from './actions';
 
 const ListCards = ({myCard}) => {
     let list = myCard.map((item, index) => {
@@ -51,12 +51,35 @@ const ListHomework = ({myList, selected}) => {
         <ul>{list}</ul>
     )
 }
-
-export const Details = ({myBoard, selected}) => {
+const AddListHMTL = ({newBoard, selected}) => {
+    const onSubmit = (e) => {
+		e.preventDefault();
+		console.log ( 'this..', this);//con truco, es el connect el this.
+    addList(this.List.value, selected);
+     this.List.value = "";
+  }
+    return(
+        <div>
+            <form onSubmit={onSubmit} className="boards">
+        <div className="form-group">
+          <textarea className="form-control inputList" ref={(e) => this.List = e} ></textarea> 
+        </div>
+        <button type="submit" className="btn btn-default">Add</button>
+        <button type="button" onClick={() => evaluateAddList(selected)}>Cancel</button>
+      </form> 
+        </div>
+    )
+}
+export const Details = ({myBoard, newList, selected}) => {
     return (
         <div>
             Hola Detalles {selected}
             <ListHomework myList={myBoard[selected]} selected={selected} />
+            {!newList?
+                <button onClick={() => evaluateAddList(selected)}>add List{selected}</button>
+            :
+                <AddListHMTL newBoard={newList} selected={selected} />
+            }
         </div>
     )
 }
